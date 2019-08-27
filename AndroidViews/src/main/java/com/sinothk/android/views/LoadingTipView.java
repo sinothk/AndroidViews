@@ -3,6 +3,7 @@ package com.sinothk.android.views;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +23,8 @@ import android.widget.TextView;
  * <pre>
  */
 public class LoadingTipView extends RelativeLayout {
+
+    private Context context;
 
     public LoadingTipView(Context context) {
         super(context);
@@ -50,8 +53,10 @@ public class LoadingTipView extends RelativeLayout {
     private ProgressBar progressBar;
 
 
-    private void initView(Context context) {
-        view = LayoutInflater.from(context).inflate(R.layout.loading_tip_view, null);
+    private void initView(Context mContext) {
+
+        this.context = mContext;
+        view = LayoutInflater.from(mContext).inflate(R.layout.loading_tip_view, null);
 
         loadTipIv = view.findViewById(R.id.loadTipIv);
         loadTipTv = view.findViewById(R.id.loadTipTv);
@@ -65,15 +70,18 @@ public class LoadingTipView extends RelativeLayout {
      * 加载中
      */
     public void showLoading() {
-        showLoading("正在加载...");
-    }
-
-    public void showLoading(String msg) {
         view.setEnabled(false);
         progressBar.setVisibility(VISIBLE);
         loadTipIv.setVisibility(GONE);
+    }
 
-        loadTipTv.setText(msg);
+    public void showLoading(String msg) {
+        showLoading();
+
+        if (!TextUtils.isEmpty(msg)) {
+            loadTipTv.setVisibility(VISIBLE);
+            loadTipTv.setText(msg);
+        }
     }
 
     /**
@@ -89,6 +97,8 @@ public class LoadingTipView extends RelativeLayout {
         loadTipIv.setVisibility(VISIBLE);
 
         loadTipIv.setImageResource(iconResId);
+
+        loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
     }
 
@@ -102,6 +112,8 @@ public class LoadingTipView extends RelativeLayout {
         loadTipIv.setVisibility(VISIBLE);
 
         loadTipIv.setImageResource(iconResId);
+
+        loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
     }
 
@@ -115,6 +127,8 @@ public class LoadingTipView extends RelativeLayout {
         loadTipIv.setVisibility(VISIBLE);
 
         loadTipIv.setImageResource(iconResId);
+
+        loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
     }
 
@@ -131,5 +145,11 @@ public class LoadingTipView extends RelativeLayout {
     public void showContent(View contentView) {
         showContent();
         contentView.setVisibility(VISIBLE);
+    }
+
+    public void setLoadIcon(int loadIconRes) {
+        if (progressBar != null) {
+            progressBar.setIndeterminateDrawable(context.getResources().getDrawable(loadIconRes));
+        }
     }
 }
