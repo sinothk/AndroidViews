@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Build;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -38,8 +39,10 @@ public class MixtureTextView extends RelativeLayout {
     private int mLineHeight;
 
     private int mTextColor = Color.BLACK;
-    private int mTextSize = sp2px(14);
+        private int mTextSize = sp2px(14);
     private String mText;
+
+//    private float letterSpacing;
 
     private int mLineSpace;
 
@@ -159,7 +162,9 @@ public class MixtureTextView extends RelativeLayout {
 
         int start = 0;
         int lineSum = 0;
+
         int fullSize = mText.length();
+
         for (int i = 0; i < destRects.size(); i++) {
             List<Rect> rs = destRects.get(i);
             Rect r = rs.get(0);
@@ -168,6 +173,7 @@ public class MixtureTextView extends RelativeLayout {
             layout = generateLayout(mText.substring(start), rectWidth);
             int lineCount = rectHeight / lineHeight;
             lineCount = layout.getLineCount() < lineCount ? layout.getLineCount() : lineCount;
+
             if (!kidding) {
                 canvas.save();
                 canvas.translate(r.left, r.top);
@@ -175,8 +181,11 @@ public class MixtureTextView extends RelativeLayout {
                 layout.draw(canvas);
                 canvas.restore();
             }
+
             start += layout.getLineEnd(lineCount - 1);
+
             lineSum += lineCount;
+
             if (start >= fullSize) {
                 break;
             }
@@ -393,6 +402,16 @@ public class MixtureTextView extends RelativeLayout {
         setTextSize(TypedValue.COMPLEX_UNIT_PX, pxSize);
     }
 
+    public void setLetterSpacing(float letterSpacing) {
+        if (letterSpacing != 0 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mTextPaint.setLetterSpacing(letterSpacing);
+
+            requestLayout();
+            invalidate();
+        }
+    }
+
+
     /**
      * 计算包含在y1到y2间的矩形区域
      *
@@ -417,8 +436,6 @@ public class MixtureTextView extends RelativeLayout {
             }
         }
 
-
-        //TODO ADD
         Collections.sort(rs, new Comparator<Rect>() {
             @Override
             public int compare(Rect lhs, Rect rhs) {
@@ -486,5 +503,4 @@ public class MixtureTextView extends RelativeLayout {
     public String getText() {
         return mText;
     }
-
 }

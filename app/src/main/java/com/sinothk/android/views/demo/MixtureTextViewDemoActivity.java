@@ -16,5 +16,7 @@ public class MixtureTextViewDemoActivity extends AppCompatActivity {
 
         mixtureTextView = findViewById(R.id.id_mixtureTextview);
         mixtureTextView.setText(getString(R.string.text2));
+
+        mixtureTextView.setLetterSpacing(0.3f);
     }
 }
