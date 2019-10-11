@@ -12,9 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-
-
-        <activity android:name=".MixtureTextViewDemoActivity">
+        <activity android:name=".TitleBarViewDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".DemoMainActivity"/>
+
+        <activity android:name=".DemoMainActivity" />
     </application>
 
 </manifest>
