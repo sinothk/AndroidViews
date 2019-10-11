@@ -12,7 +12,10 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_title_bar_view_demo)
 
-        titleBarView.setBackgroundColor(Color.BLUE)
+        titleBarView.setBackgroundResource(R.mipmap.ic_launcher)
+
         titleBarView.setNoticeViewVisible(View.GONE)
+        titleBarView.setCenterTxt("SINOTHK")
+        titleBarView.setCenterTxtColor(R.color.colorAccent)
     }
 }

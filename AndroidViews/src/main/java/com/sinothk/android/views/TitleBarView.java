@@ -3,11 +3,13 @@ package com.sinothk.android.views;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class TitleBarView extends LinearLayout {
 
@@ -36,9 +38,11 @@ public class TitleBarView extends LinearLayout {
     private Context context;
     private View view;
 
-    private LinearLayout titleBarRootView;
+    private LinearLayout titleBarRootView,tbBackView;
     private View noticeView;
     private RelativeLayout titleBarView;
+    private TextView tbTxt;
+
 
     private void initView(Context mContext) {
         this.context = mContext;
@@ -47,13 +51,31 @@ public class TitleBarView extends LinearLayout {
         titleBarRootView = view.findViewById(R.id.titleBarRootView);
         noticeView = view.findViewById(R.id.noticeView);
         titleBarView = view.findViewById(R.id.titleBarView);
+        //
+        tbBackView = view.findViewById(R.id.tbBackView);
 
+        //
+        tbTxt = view.findViewById(R.id.tbTxt);
+
+        titleBarRootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         addView(view);
     }
 
     public void setNoticeViewVisible(int visible) {
         if (noticeView != null) {
             noticeView.setVisibility(visible);
+        }
+    }
+
+    public void setCenterTxt(String txt) {
+        if (tbTxt != null) {
+            tbTxt.setText(txt);
+        }
+    }
+
+    public void setCenterTxtColor(int colorId) {
+        if (tbTxt != null) {
+            tbTxt.setTextColor(ContextCompat.getColor(context, colorId));
         }
     }
 }
