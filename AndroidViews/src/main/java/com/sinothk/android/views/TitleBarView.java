@@ -2,6 +2,7 @@ package com.sinothk.android.views;
 
 import android.content.Context;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,7 @@ public class TitleBarView extends LinearLayout {
     private ImageView tbLeftIcon;
 
     // 中心
-    private TextView tbCenterTxt;
+    private TextView tbCenterTxt, tbSubCenterTxt;
 
     private void initView(Context mContext) {
         this.context = mContext;
@@ -73,6 +74,7 @@ public class TitleBarView extends LinearLayout {
         tbLeftIcon = view.findViewById(R.id.tbLeftIcon);
         // 中间
         tbCenterTxt = view.findViewById(R.id.tbCenterTxt);
+        tbSubCenterTxt = view.findViewById(R.id.tbSubCenterTxt);
 
         // 加入父视图
         addView(view);
@@ -93,8 +95,19 @@ public class TitleBarView extends LinearLayout {
     }
 
     public void setCenterTxt(String txt) {
-        if (tbCenterTxt != null) {
+        if (tbCenterTxt != null && !TextUtils.isEmpty(txt)) {
             tbCenterTxt.setText(txt);
+        }
+    }
+
+    public void setCenterSubTxt(String txt) {
+        if (tbSubCenterTxt != null && !TextUtils.isEmpty(txt)) {
+            tbSubCenterTxt.setText(txt);
+            tbSubCenterTxt.setVisibility(VISIBLE);
+        } else {
+            if (tbSubCenterTxt != null) {
+                tbSubCenterTxt.setVisibility(GONE);
+            }
         }
     }
 
@@ -104,10 +117,18 @@ public class TitleBarView extends LinearLayout {
         }
     }
 
+    public void setCenterSubTxtColor(int colorId) {
+        if (tbSubCenterTxt != null) {
+            tbSubCenterTxt.setTextColor(ContextCompat.getColor(context, colorId));
+        }
+    }
+
 
     public void setLeftViewClickListener(OnClickListener clickListener) {
         if (tbLeftView != null && clickListener != null) {
             tbLeftView.setOnClickListener(clickListener);
         }
     }
+
+
 }

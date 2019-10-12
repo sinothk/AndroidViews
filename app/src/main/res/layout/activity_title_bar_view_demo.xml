@@ -9,7 +9,7 @@
     <com.sinothk.android.views.TitleBarView
         android:id="@+id/titleBarView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_46"
+        android:layout_height="@dimen/dp_70"
         android:background="@color/transparent" />
 
 

@@ -46,15 +46,39 @@
                 android:textSize="@dimen/sp_15" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tbCenterTxt"
+        <LinearLayout
+            android:id="@+id/tbCenterView"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_48"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:maxEms="8"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_17"
-            tools:text="Sinothk System" />
+            android:minWidth="@dimen/dp_48"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tbCenterTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxEms="8"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_17"
+                tools:text="我的好友" />
+
+            <TextView
+                android:id="@+id/tbSubCenterTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:maxEms="8"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                tools:text="38人" />
+        </LinearLayout>
+
+
     </RelativeLayout>
 </LinearLayout>

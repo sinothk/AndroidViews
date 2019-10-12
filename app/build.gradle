@@ -35,7 +35,7 @@ dependencies {
 
     //
     implementation 'com.github.sinothk:AndroidRes:2.x.1012'
-//    implementation 'com.github.sinothk:AndroidUtils:1.19.0908'
+    implementation 'com.github.sinothk:AndroidUtils:2.x.1012'
 }
 repositories {
     mavenCentral()
