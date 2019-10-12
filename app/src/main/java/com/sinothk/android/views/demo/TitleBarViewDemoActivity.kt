@@ -38,20 +38,20 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
 
         // 右边
         titleBarView.setRight1Txt("分享") {
-//            XUtils.toast().show("分享")
+            XUtils.toast().show("分享")
         }
         titleBarView.setRight1TxtColor(R.color.white)
 
-//        titleBarView.setRight2Txt("收藏") {
-////            XUtils.toast().show("收藏")
-//        }
-//        titleBarView.setRight2TxtColor(R.color.white)
-//
-//        titleBarView.setRight1Icon(R.drawable.comm_movie_liked) {
-////            XUtils.toast().show("setRight1Icon")
-//        }
+        titleBarView.setRight2Txt("收藏") {
+            XUtils.toast().show("收藏")
+        }
+        titleBarView.setRight2TxtColor(R.color.white)
+
+        titleBarView.setRight1Icon(R.drawable.comm_movie_liked) {
+            XUtils.toast().show("setRight1Icon")
+        }
         titleBarView.setRight2Icon(R.drawable.comm_movie_liked) {
-//            XUtils.toast().show("setRight2Icon")
+            XUtils.toast().show("setRight2Icon")
         }
     }
 }
