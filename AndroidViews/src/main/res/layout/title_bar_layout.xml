@@ -41,13 +41,14 @@
                 android:id="@+id/tbLeftTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_48"
-                android:minWidth="@dimen/dp_36"
-                android:paddingStart="@dimen/dp_6"
-                android:paddingEnd="@dimen/dp_6"
                 android:gravity="center"
+                android:minWidth="@dimen/dp_36"
+                android:paddingStart="@dimen/dp_3"
+                android:paddingEnd="@dimen/dp_6"
                 android:text="返回"
                 android:textColor="@color/white"
-                android:textSize="@dimen/sp_15" />
+                android:textSize="@dimen/sp_15"
+                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,29 +90,32 @@
             android:layout_height="@dimen/dp_48"
             android:layout_alignParentEnd="true"
             android:gravity="center"
-            android:paddingStart="@dimen/dp_10"
-            android:paddingEnd="@dimen/dp_10"
             android:minWidth="@dimen/dp_48"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_6">
 
             <ImageView
                 android:id="@+id/tbRight1Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
-                android:minWidth="@dimen/dp_30"
-                android:padding="@dimen/dp_3"
-                android:src="@drawable/comm_add_yellow" />
+                android:minWidth="@dimen/dp_36"
+                android:paddingStart="@dimen/dp_6"
+                android:paddingEnd="@dimen/dp_6"
+                android:visibility="gone"
+                tools:src="@drawable/comm_add_yellow" />
 
             <ImageView
                 android:id="@+id/tbRight2Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
-                android:minWidth="@dimen/dp_30"
-                android:padding="@dimen/dp_3"
-                android:src="@drawable/comm_add_yellow"
-                android:visibility="visible" />
+                android:minWidth="@dimen/dp_36"
+                android:paddingStart="@dimen/dp_6"
+                android:paddingEnd="@dimen/dp_6"
+                android:visibility="gone"
+                tools:src="@drawable/comm_add_yellow" />
 
             <TextView
                 android:id="@+id/tbRight1Txt"
@@ -121,9 +125,10 @@
                 android:minWidth="@dimen/dp_36"
                 android:paddingStart="@dimen/dp_6"
                 android:paddingEnd="@dimen/dp_6"
-                android:text="收藏"
                 android:textColor="@color/white"
-                android:textSize="@dimen/sp_15" />
+                android:textSize="@dimen/sp_15"
+                android:visibility="gone"
+                tools:text="收藏" />
 
             <TextView
                 android:id="@+id/tbRight2Txt"
@@ -133,10 +138,10 @@
                 android:minWidth="@dimen/dp_36"
                 android:paddingStart="@dimen/dp_6"
                 android:paddingEnd="@dimen/dp_6"
-                android:text="我的分享"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_15"
-                android:visibility="visible" />
+                android:visibility="gone"
+                tools:text="我的分享" />
         </LinearLayout>
 
 

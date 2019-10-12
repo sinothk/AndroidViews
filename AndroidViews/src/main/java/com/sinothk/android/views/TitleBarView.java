@@ -14,6 +14,11 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
+import org.jetbrains.annotations.NotNull;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 public class TitleBarView extends LinearLayout {
 
     public TitleBarView(Context context) {
@@ -48,6 +53,10 @@ public class TitleBarView extends LinearLayout {
     private TextView tbLeftTxt;
     private ImageView tbLeftIcon;
 
+    // 返回
+    private TextView tbRight1Txt, tbRight2Txt;
+    private ImageView tbRight1Icon, tbRight2Icon;
+
     // 中心
     private TextView tbCenterTxt, tbSubCenterTxt;
 
@@ -67,9 +76,16 @@ public class TitleBarView extends LinearLayout {
         tbLeftView = view.findViewById(R.id.tbLeftView);
         tbLeftTxt = view.findViewById(R.id.tbLeftTxt);
         tbLeftIcon = view.findViewById(R.id.tbLeftIcon);
+
         // 中间
         tbCenterTxt = view.findViewById(R.id.tbCenterTxt);
         tbSubCenterTxt = view.findViewById(R.id.tbSubCenterTxt);
+
+        // 返回部分
+        tbRight1Txt = view.findViewById(R.id.tbRight1Txt);
+        tbRight2Txt = view.findViewById(R.id.tbRight2Txt);
+        tbRight1Icon = view.findViewById(R.id.tbRight1Icon);
+        tbRight2Icon = view.findViewById(R.id.tbRight2Icon);
 
         // 加入父视图
         addView(view);
@@ -126,4 +142,72 @@ public class TitleBarView extends LinearLayout {
     }
 
 
+    public void setLeftTxt(String txt) {
+        if (tbLeftTxt != null && !TextUtils.isEmpty(txt)) {
+            tbLeftTxt.setText(txt);
+        }
+    }
+
+    public void setLeftTxtColor(int txtColorResId) {
+        if (tbLeftTxt != null) {
+            tbLeftTxt.setTextColor(ContextCompat.getColor(context, txtColorResId));
+        }
+    }
+
+    public void setLeftTxtVisible(int visible) {
+        if (tbLeftTxt != null) {
+            tbLeftTxt.setVisibility(visible);
+        }
+    }
+
+    public void setLeftIcon(int imgResId) {
+        if (tbLeftIcon != null) {
+            tbLeftIcon.setImageResource(imgResId);
+        }
+    }
+
+
+    public void setRight1Txt(String txt, OnClickListener clickListener) {
+        if (tbRight1Txt != null) {
+            tbRight1Txt.setText(txt);
+            tbRight1Txt.setOnClickListener(clickListener);
+            tbRight1Txt.setVisibility(VISIBLE);
+        }
+    }
+
+    public void setRight1TxtColor(int colorId) {
+        if (tbRight1Txt != null) {
+            tbRight1Txt.setTextColor(ContextCompat.getColor(context, colorId));
+        }
+    }
+
+    public void setRight2Txt(String txt, OnClickListener clickListener) {
+        if (tbRight2Txt != null) {
+            tbRight2Txt.setText(txt);
+            tbRight2Txt.setOnClickListener(clickListener);
+            tbRight2Txt.setVisibility(VISIBLE);
+        }
+    }
+
+    public void setRight2TxtColor(int colorId) {
+        if (tbRight2Txt != null) {
+            tbRight2Txt.setTextColor(ContextCompat.getColor(context, colorId));
+        }
+    }
+
+    public void setRight1Icon(int imgResId, OnClickListener clickListener) {
+        if (tbRight1Icon != null) {
+            tbRight1Icon.setImageResource(imgResId);
+            tbRight1Icon.setOnClickListener(clickListener);
+            tbRight1Icon.setVisibility(VISIBLE);
+        }
+    }
+
+    public void setRight2Icon(int imgResId, OnClickListener clickListener) {
+        if (tbRight2Icon != null) {
+            tbRight2Icon.setImageResource(imgResId);
+            tbRight2Icon.setOnClickListener(clickListener);
+            tbRight2Icon.setVisibility(VISIBLE);
+        }
+    }
 }
