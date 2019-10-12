@@ -14,11 +14,6 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
-import org.jetbrains.annotations.NotNull;
-
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
-
 public class TitleBarView extends LinearLayout {
 
     public TitleBarView(Context context) {
