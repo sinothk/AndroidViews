@@ -79,3 +79,54 @@
         
   # 使用3: ScrollChangeView
         setOnScrollChange
+
+# 使用5: TitleBarView
+   ## 布局：
+	<com.sinothk.android.views.TitleBarView
+        android:id="@+id/titleBarView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+	android:background="@color/transparent" />
+	
+   ## java
+   	StatusBarUtil.transparencyBar(this)
+
+        // 设置背景
+        titleBarView.setTitleBarViewBg(R.drawable.shape_theme_color_gradient)
+        titleBarView.setTitleBarViewBg(R.drawable.tb_bg2)
+	// titleBarView.setTitleBarViewBg(R.color.colorPrimary)
+
+        // 中间文字控制
+        titleBarView.setCenterTxt("我的好友")
+        titleBarView.setCenterSubTxt("共25人")
+
+        titleBarView.setCenterTxtColor(R.color.white)
+        titleBarView.setCenterSubTxtColor(R.color.white)
+
+        // 左边View
+        titleBarView.setLeftViewClickListener {
+            finish()
+        }
+        titleBarView.setLeftTxt("返回")
+        titleBarView.setLeftTxtVisible(View.GONE)
+        titleBarView.setLeftTxtColor(R.color.white)
+        titleBarView.setLeftIcon(R.drawable.comm_movie_liked)
+
+        // 右边
+        titleBarView.setRight1Txt("分享") {
+            XUtils.toast().show("分享")
+        }
+        titleBarView.setRight1TxtColor(R.color.white)
+
+        titleBarView.setRight2Txt("收藏") {
+            XUtils.toast().show("收藏")
+        }
+        titleBarView.setRight2TxtColor(R.color.white)
+
+        titleBarView.setRight1Icon(R.drawable.comm_movie_liked) {
+            XUtils.toast().show("setRight1Icon")
+        }
+        titleBarView.setRight2Icon(R.drawable.comm_movie_liked) {
+            XUtils.toast().show("setRight2Icon")
+        }
+       
