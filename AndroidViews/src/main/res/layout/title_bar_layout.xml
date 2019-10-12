@@ -3,19 +3,19 @@
     android:id="@+id/titleBarRootView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
+    android:background="@color/red"
     android:orientation="vertical">
 
     <View
         android:id="@+id/noticeView"
         android:layout_width="match_parent"
+        android:visibility="visible"
         android:layout_height="@dimen/dp_24" />
 
     <RelativeLayout
         android:id="@+id/titleBarView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_48">
-
+        android:layout_height="@dimen/dp_46">
 
         <LinearLayout
             android:id="@+id/tbBackView"
@@ -42,7 +42,7 @@
                 android:gravity="center"
                 android:text="返回"
                 android:textColor="@color/white"
-                android:textSize="@dimen/sp_13" />
+                android:textSize="@dimen/sp_15" />
         </LinearLayout>
 
         <TextView

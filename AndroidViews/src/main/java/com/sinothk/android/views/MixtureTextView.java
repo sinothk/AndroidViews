@@ -39,7 +39,7 @@ public class MixtureTextView extends RelativeLayout {
     private int mLineHeight;
 
     private int mTextColor = Color.BLACK;
-        private int mTextSize = sp2px(14);
+    private int mTextSize = sp2px(14);
     private String mText;
 
 //    private float letterSpacing;
@@ -82,7 +82,7 @@ public class MixtureTextView extends RelativeLayout {
 
         //just for text
         if (mText == null) {
-            mText = getResources().getString(R.string.app_name);
+            mText = "未知内容";
         }
 
         //get text

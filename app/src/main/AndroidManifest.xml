@@ -12,12 +12,16 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".TitleBarViewDemoActivity">
+        <activity
+            android:name=".TitleBarViewDemoActivity"
+            android:theme="@style/Theme_MyTitle_Notice_BLACK">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
 

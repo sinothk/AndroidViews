@@ -2,14 +2,15 @@ package com.sinothk.android.views;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 
 public class TitleBarView extends LinearLayout {
 
@@ -36,29 +37,39 @@ public class TitleBarView extends LinearLayout {
 
 
     private Context context;
-    private View view;
-
-    private LinearLayout titleBarRootView,tbBackView;
-    private View noticeView;
+    private LinearLayout titleBarRootView, tbBackView;
+    private View view, noticeView;
     private RelativeLayout titleBarView;
     private TextView tbTxt;
 
-
     private void initView(Context mContext) {
         this.context = mContext;
+
         view = LayoutInflater.from(mContext).inflate(R.layout.title_bar_layout, null);
 
+        // 基础
         titleBarRootView = view.findViewById(R.id.titleBarRootView);
+        titleBarRootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+
         noticeView = view.findViewById(R.id.noticeView);
         titleBarView = view.findViewById(R.id.titleBarView);
-        //
+
+        // 返回部分
         tbBackView = view.findViewById(R.id.tbBackView);
 
-        //
+        // 中间
         tbTxt = view.findViewById(R.id.tbTxt);
 
-        titleBarRootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        // 加入父视图
         addView(view);
+        setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        setOrientation(VERTICAL);
+    }
+
+    public void setTitleBarViewBg(int tbBg) {
+        if (titleBarRootView != null) {
+            titleBarRootView.setBackgroundResource(tbBg);
+        }
     }
 
     public void setNoticeViewVisible(int visible) {
@@ -78,4 +89,6 @@ public class TitleBarView extends LinearLayout {
             tbTxt.setTextColor(ContextCompat.getColor(context, colorId));
         }
     }
+
+
 }
