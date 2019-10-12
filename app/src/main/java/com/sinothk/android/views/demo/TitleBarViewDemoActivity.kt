@@ -16,8 +16,8 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
         StatusBarUtil.transparencyBar(this)
 
         // 设置背景
-//        titleBarView.setTitleBarViewBg(R.drawable.tb_bg)
-        titleBarView.setTitleBarViewBg(R.color.colorPrimary)
+        titleBarView.setTitleBarViewBg(R.drawable.tb_bg)
+//        titleBarView.setTitleBarViewBg(R.color.colorPrimary)
 
         titleBarView.setCenterTxt("SINOTHK System")
         titleBarView.setCenterSubTxt("共25人")
