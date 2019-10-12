@@ -21,7 +21,7 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
 //        titleBarView.setTitleBarViewBg(R.color.colorPrimary)
 
         // 中间文字控制
-        titleBarView.setCenterTxt("SINOTHK System")
+        titleBarView.setCenterTxt("我的好友")
         titleBarView.setCenterSubTxt("共25人")
 
         titleBarView.setCenterTxtColor(R.color.white)
@@ -42,14 +42,14 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
         }
         titleBarView.setRight1TxtColor(R.color.white)
 
-        titleBarView.setRight2Txt("收藏") {
-//            XUtils.toast().show("收藏")
-        }
-        titleBarView.setRight2TxtColor(R.color.white)
-
-        titleBarView.setRight1Icon(R.drawable.comm_movie_liked) {
-//            XUtils.toast().show("setRight1Icon")
-        }
+//        titleBarView.setRight2Txt("收藏") {
+////            XUtils.toast().show("收藏")
+//        }
+//        titleBarView.setRight2TxtColor(R.color.white)
+//
+//        titleBarView.setRight1Icon(R.drawable.comm_movie_liked) {
+////            XUtils.toast().show("setRight1Icon")
+//        }
         titleBarView.setRight2Icon(R.drawable.comm_movie_liked) {
 //            XUtils.toast().show("setRight2Icon")
         }
