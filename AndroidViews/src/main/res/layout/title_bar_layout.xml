@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/titleBarRootView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/red"
+    android:background="@color/blue"
     android:orientation="vertical">
 
     <View
         android:id="@+id/noticeView"
         android:layout_width="match_parent"
-        android:visibility="visible"
-        android:layout_height="@dimen/dp_24" />
+        android:layout_height="@dimen/dp_24"
+        android:visibility="visible" />
 
     <RelativeLayout
         android:id="@+id/titleBarView"
@@ -18,25 +19,25 @@
         android:layout_height="@dimen/dp_46">
 
         <LinearLayout
-            android:id="@+id/tbBackView"
+            android:id="@+id/tbLeftView"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_48"
             android:gravity="center"
             android:minWidth="@dimen/dp_48"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10">
 
-            <TextView
-                android:id="@+id/tbBackIcon"
+            <ImageView
+                android:id="@+id/tbLeftIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
-                android:maxWidth="@dimen/dp_20"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_13" />
+                android:minWidth="@dimen/dp_26"
+                android:src="@drawable/comm_add_yellow" />
 
             <TextView
-                android:id="@+id/tbBackTxt"
+                android:id="@+id/tbLeftTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
@@ -46,15 +47,14 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tbTxt"
+            android:id="@+id/tbCenterTxt"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_48"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="返回"
+            android:maxEms="8"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp_17" />
-
-
+            android:textSize="@dimen/sp_17"
+            tools:text="Sinothk System" />
     </RelativeLayout>
 </LinearLayout>

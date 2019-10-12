@@ -5,12 +5,18 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
+
+import org.jetbrains.annotations.NotNull;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 
 public class TitleBarView extends LinearLayout {
 
@@ -37,10 +43,17 @@ public class TitleBarView extends LinearLayout {
 
 
     private Context context;
-    private LinearLayout titleBarRootView, tbBackView;
+    private LinearLayout titleBarRootView;
     private View view, noticeView;
     private RelativeLayout titleBarView;
-    private TextView tbTxt;
+
+    // 返回
+    private LinearLayout tbLeftView;
+    private TextView tbLeftTxt;
+    private ImageView tbLeftIcon;
+
+    // 中心
+    private TextView tbCenterTxt;
 
     private void initView(Context mContext) {
         this.context = mContext;
@@ -55,10 +68,11 @@ public class TitleBarView extends LinearLayout {
         titleBarView = view.findViewById(R.id.titleBarView);
 
         // 返回部分
-        tbBackView = view.findViewById(R.id.tbBackView);
-
+        tbLeftView = view.findViewById(R.id.tbLeftView);
+        tbLeftTxt = view.findViewById(R.id.tbLeftTxt);
+        tbLeftIcon = view.findViewById(R.id.tbLeftIcon);
         // 中间
-        tbTxt = view.findViewById(R.id.tbTxt);
+        tbCenterTxt = view.findViewById(R.id.tbCenterTxt);
 
         // 加入父视图
         addView(view);
@@ -79,16 +93,21 @@ public class TitleBarView extends LinearLayout {
     }
 
     public void setCenterTxt(String txt) {
-        if (tbTxt != null) {
-            tbTxt.setText(txt);
+        if (tbCenterTxt != null) {
+            tbCenterTxt.setText(txt);
         }
     }
 
     public void setCenterTxtColor(int colorId) {
-        if (tbTxt != null) {
-            tbTxt.setTextColor(ContextCompat.getColor(context, colorId));
+        if (tbCenterTxt != null) {
+            tbCenterTxt.setTextColor(ContextCompat.getColor(context, colorId));
         }
     }
 
 
+    public void setLeftViewClickListener(OnClickListener clickListener) {
+        if (tbLeftView != null && clickListener != null) {
+            tbLeftView.setOnClickListener(clickListener);
+        }
+    }
 }
