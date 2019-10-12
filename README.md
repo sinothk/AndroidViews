@@ -12,7 +12,10 @@
 
 ## Step 2. Add the dependency
 	dependencies {
-	        implementation 'com.github.sinothk:AndroidViews:1.19.0925'
+	        // implementation 'com.github.sinothk:AndroidViews:1.19.0925'
+		
+		// 兼容：Androidx
+		implementation 'com.github.sinothk:AndroidViews:2.x.1012'
 	}
 
 # 使用1: 图文混编 MixtureTextView
