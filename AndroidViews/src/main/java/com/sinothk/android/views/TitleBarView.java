@@ -141,6 +141,11 @@ public class TitleBarView extends LinearLayout {
         }
     }
 
+    public void setLeftVisible(int visible) {
+        if (tbLeftView != null) {
+            tbLeftView.setVisibility(visible);
+        }
+    }
 
     public void setLeftTxt(String txt) {
         if (tbLeftTxt != null && !TextUtils.isEmpty(txt)) {

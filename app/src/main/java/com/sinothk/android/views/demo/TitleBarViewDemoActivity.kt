@@ -31,6 +31,8 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
         titleBarView.setLeftViewClickListener {
             finish()
         }
+        titleBarView.setLeftVisible(View.GONE)
+
         titleBarView.setLeftTxt("返回")
         titleBarView.setLeftTxtVisible(View.GONE)
         titleBarView.setLeftTxtColor(R.color.white)

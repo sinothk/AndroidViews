@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_48"
             android:gravity="center"
+            android:visibility="gone"
             android:minWidth="@dimen/dp_48"
             android:orientation="horizontal">
 
