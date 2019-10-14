@@ -12,7 +12,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".TitleBarViewDemoActivity"
+            android:name="com.sinothk.android.views.demo.bigImagePageViewDemo.BigImageShowDemoMainActivity"
             android:theme="@style/Theme_MyTitle_Notice_BLACK">
 
             <intent-filter>

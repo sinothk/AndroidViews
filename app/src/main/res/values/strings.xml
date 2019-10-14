@@ -26,4 +26,9 @@
             are you程度来冲毁这条红线，谁该hello world how are you为之买单?
         </item>
     </array>
+
+    <string name="administrator">Administrator #%1$d</string>
+    <string name="skip">Skip</string>
+    <string name="simple_views">Simple Views</string>
+    <string name="fragments">Fragments</string>
 </resources>

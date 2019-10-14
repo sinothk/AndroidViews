@@ -3,7 +3,7 @@ package com.sinothk.android.views.demo
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_loading_tip_view_demo.*
 
 /**
  * <pre>
@@ -17,7 +17,7 @@ class DemoMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_loading_tip_view_demo)
 
         loadTipTv.setLoadIcon(R.drawable.loading_tip_icon_green)
         loadTipTv.showLoading()//"数据加载中..."
