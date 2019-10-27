@@ -74,6 +74,7 @@ public class LoadingTipView extends RelativeLayout {
         view.setEnabled(false);
         progressBar.setVisibility(VISIBLE);
         loadTipIv.setVisibility(GONE);
+        this.setVisibility(VISIBLE);
     }
 
     public void showLoading(String msg) {
@@ -101,6 +102,7 @@ public class LoadingTipView extends RelativeLayout {
 
         loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
+        this.setVisibility(VISIBLE);
     }
 
     public void showEmpty() {
@@ -116,6 +118,7 @@ public class LoadingTipView extends RelativeLayout {
 
         loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
+        this.setVisibility(VISIBLE);
     }
 
     public void showError(String msg) {
@@ -131,6 +134,7 @@ public class LoadingTipView extends RelativeLayout {
 
         loadTipTv.setVisibility(VISIBLE);
         loadTipTv.setText(msg);
+        this.setVisibility(VISIBLE);
     }
 
     public void setRetryListener(OnClickListener onClickListener) {
