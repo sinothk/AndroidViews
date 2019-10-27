@@ -143,12 +143,8 @@ public class LoadingTipView extends RelativeLayout {
         }
     }
 
-    public void showContent() {
-        this.setVisibility(GONE);
-    }
-
     public void showContent(View contentView) {
-        showContent();
+        this.setVisibility(GONE);
         contentView.setVisibility(VISIBLE);
     }
 
