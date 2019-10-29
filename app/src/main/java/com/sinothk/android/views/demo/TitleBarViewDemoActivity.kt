@@ -31,12 +31,12 @@ class TitleBarViewDemoActivity : AppCompatActivity() {
         titleBarView.setLeftViewClickListener {
             finish()
         }
-        titleBarView.setLeftVisible(View.GONE)
+        titleBarView.setLeftVisible(View.VISIBLE)
 
         titleBarView.setLeftTxt("返回")
-        titleBarView.setLeftTxtVisible(View.GONE)
+        titleBarView.setLeftTxtVisible(View.VISIBLE)
         titleBarView.setLeftTxtColor(R.color.white)
-        titleBarView.setLeftIcon(R.drawable.comm_movie_liked)
+        titleBarView.setLeftIcon(R.drawable.back_white)
 
         // 右边
         titleBarView.setRight1Txt("分享") {
