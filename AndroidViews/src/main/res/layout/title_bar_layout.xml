@@ -36,7 +36,7 @@
                 android:gravity="center"
                 android:minWidth="@dimen/dp_26"
                 android:src="@drawable/back_white"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tbLeftTxt"
