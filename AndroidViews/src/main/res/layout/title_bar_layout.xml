@@ -4,7 +4,7 @@
     android:id="@+id/titleBarRootView"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_70"
-    android:background="@color/red"
+    android:background="@color/transparent"
     android:orientation="vertical">
 
     <View
