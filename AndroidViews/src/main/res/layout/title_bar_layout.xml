@@ -96,25 +96,25 @@
 
             <ImageView
                 android:id="@+id/tbRight1Icon"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp_48"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
                 android:minWidth="@dimen/dp_36"
                 android:paddingStart="@dimen/dp_6"
                 android:paddingEnd="@dimen/dp_6"
                 android:visibility="gone"
-                tools:src="@drawable/comm_add_yellow" />
+                tools:src="@drawable/add_white" />
 
             <ImageView
                 android:id="@+id/tbRight2Icon"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp_48"
                 android:layout_height="@dimen/dp_48"
                 android:gravity="center"
                 android:minWidth="@dimen/dp_36"
                 android:paddingStart="@dimen/dp_6"
                 android:paddingEnd="@dimen/dp_6"
                 android:visibility="gone"
-                tools:src="@drawable/comm_add_yellow" />
+                tools:src="@drawable/add_white" />
 
             <TextView
                 android:id="@+id/tbRight1Txt"

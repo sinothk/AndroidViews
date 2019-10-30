@@ -202,7 +202,9 @@ public class TitleBarView extends LinearLayout {
 
     public void setRight1Icon(int imgResId, OnClickListener clickListener) {
         if (tbRight1Icon != null) {
-            tbRight1Icon.setImageResource(imgResId);
+            if (imgResId != 0) {
+                tbRight1Icon.setImageResource(imgResId);
+            }
             tbRight1Icon.setOnClickListener(clickListener);
             tbRight1Icon.setVisibility(VISIBLE);
         }
@@ -210,7 +212,9 @@ public class TitleBarView extends LinearLayout {
 
     public void setRight2Icon(int imgResId, OnClickListener clickListener) {
         if (tbRight2Icon != null) {
-            tbRight2Icon.setImageResource(imgResId);
+            if (imgResId != 0) {
+                tbRight2Icon.setImageResource(imgResId);
+            }
             tbRight2Icon.setOnClickListener(clickListener);
             tbRight2Icon.setVisibility(VISIBLE);
         }
