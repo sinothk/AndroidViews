@@ -34,7 +34,7 @@ public class ScrollChangeView extends ScrollView {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setOnScrollChange(final Context context, final View titleView, final View baseView, final int normalColor, final int red, final int green, final int blue) {
+    public void setOnScrollChange(final Context context, final View titleView, final View baseView, final int red, final int green, final int blue) {
 
         setOnScrollListener(new OnScrollListener() {
             @Override
